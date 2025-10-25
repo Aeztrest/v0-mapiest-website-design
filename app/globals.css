@@ -1,0 +1,273 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Mapiest renk paletine göre güncellendi */
+  --background: oklch(1 0 0); /* #ffffff */
+  --foreground: oklch(0.3 0 0); /* #4b5563 */
+  --card: oklch(0.98 0 0); /* #f9fafb */
+  --card-foreground: oklch(0.3 0 0); /* #4b5563 */
+  --popover: oklch(1 0 0); /* #ffffff */
+  --popover-foreground: oklch(0.3 0 0); /* #4b5563 */
+  --primary: oklch(0.42 0.18 260); /* #0052e2 kraliyet mavisi */
+  --primary-foreground: oklch(1 0 0); /* #ffffff */
+  --secondary: oklch(0.7 0.15 50); /* #F98A02 turuncu */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff */
+  --muted: oklch(0.96 0 0); /* #f1f5f9 */
+  --muted-foreground: oklch(0.3 0 0); /* #4b5563 */
+  --accent: oklch(0.7 0.15 50); /* #F98A02 turuncu vurgu */
+  --accent-foreground: oklch(1 0 0); /* #ffffff */
+  --success: oklch(0.6 0.15 140); /* #17C671 yeşil */
+  --success-foreground: oklch(1 0 0); /* #ffffff */
+  --warning: oklch(0.8 0.15 80); /* #F5C518 sarı */
+  --warning-foreground: oklch(0.2 0 0); /* koyu metin */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0 0); /* #e5e7eb */
+  --input: oklch(1 0 0); /* #ffffff */
+  --ring: oklch(0.42 0.18 260); /* #0052e2 */
+  --chart-1: oklch(0.42 0.18 260); /* #0052e2 */
+  --chart-2: oklch(0.7 0.15 50); /* #F98A02 */
+  --chart-3: oklch(0.3 0 0); /* #4b5563 */
+  --chart-4: oklch(0.6 0.15 140); /* #17C671 */
+  --chart-5: oklch(0.9 0 0); /* #e5e7eb */
+  --radius: 0.625rem;
+  --sidebar: oklch(0.96 0 0); /* #f1f5f9 */
+  --sidebar-foreground: oklch(0.3 0 0); /* #4b5563 */
+  --sidebar-primary: oklch(0.42 0.18 260); /* #0052e2 */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff */
+  --sidebar-accent: oklch(0.7 0.15 50); /* #F98A02 */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff */
+  --sidebar-border: oklch(0.9 0 0); /* #e5e7eb */
+  --sidebar-ring: oklch(0.42 0.18 260); /* #0052e2 */
+  --footer-bg: oklch(0.28 0.15 265); /* #07377e koyu mavi */
+}
+
+.dark {
+  /* Koyu tema için Mapiest renkleri */
+  --background: oklch(0.08 0 0); /* #0F1536 koyu siyah/metalik gri */
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.42 0.18 260); /* #0052e2 */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.7 0.15 50); /* #F98A02 turuncu */
+  --secondary-foreground: oklch(0.08 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.7 0.15 50); /* #F98A02 turuncu */
+  --accent-foreground: oklch(0.08 0 0);
+  --success: oklch(0.6 0.15 140); /* #17C671 yeşil */
+  --success-foreground: oklch(0.08 0 0);
+  --warning: oklch(0.8 0.15 80); /* #F5C518 sarı */
+  --warning-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.15 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.42 0.18 260); /* #0052e2 */
+  --chart-1: oklch(0.42 0.18 260); /* #0052e2 */
+  --chart-2: oklch(0.7 0.15 50);
+  --chart-3: oklch(0.708 0 0);
+  --chart-4: oklch(0.6 0.15 140);
+  --chart-5: oklch(0.15 0 0);
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.42 0.18 260); /* #0052e2 */
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.7 0.15 50);
+  --sidebar-accent-foreground: oklch(0.08 0 0);
+  --sidebar-border: oklch(0.15 0 0);
+  --sidebar-ring: oklch(0.42 0.18 260); /* #0052e2 */
+  --footer-bg: oklch(0.28 0.15 265); /* #07377e koyu mavi */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-footer-bg: var(--footer-bg);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes scan {
+    0% {
+      top: 0;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes marker-appear {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateY(-10px);
+    }
+    50% {
+      transform: scale(1.2) translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes radar-pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Yeni harita animasyonları eklendi */
+  @keyframes radar-expand {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes data-point {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes ping-slow {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes connection-line {
+    0%,
+    100% {
+      opacity: 0;
+      stroke-dasharray: 0, 100;
+    }
+    50% {
+      opacity: 0.6;
+      stroke-dasharray: 100, 0;
+    }
+  }
+
+  .animate-scan {
+    animation: scan 3s ease-in-out infinite;
+  }
+
+  .animate-marker-appear {
+    animation: marker-appear 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-radar-pulse {
+    animation: radar-pulse 2s ease-out infinite;
+  }
+
+  .animate-radar-expand {
+    animation: radar-expand 3s ease-out infinite;
+  }
+
+  .animate-data-point {
+    animation: data-point 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-connection-line {
+    animation: connection-line 3s ease-in-out infinite;
+  }
+}
