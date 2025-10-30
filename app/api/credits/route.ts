@@ -2,10 +2,12 @@ import { NextResponse } from "next/server"
 
 export async function GET() {
   try {
-    const response = await fetch("http://72.60.212.48:8001/credits/get-credit-infos", {
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://72.60.212.48:8001"
+    const response = await fetch(`${backendUrl}/credits/get-credit-infos`, {
       headers: {
         accept: "application/json",
       },
+      cache: "no-store", // Her zaman fresh data çek
     })
 
     if (!response.ok) {
